@@ -34,6 +34,20 @@ export default function Weather(props) {
       <input type="submit" value="Search" />
     </form>
   );
+  let footer = (
+    <footer>
+      <a
+        href="https://github.com/syazwaniazahar97/weather-app-react"
+        target="blank"
+      >
+        Open source code
+      </a>{" "}
+      ", by "
+      <a href="https://github.com/syazwaniazahar97" target="blank">
+        Nur Syazwani Azahar
+      </a>
+    </footer>
+  );
 
   if (loaded) {
     return (
@@ -48,9 +62,15 @@ export default function Weather(props) {
             <img src={weather.icon} alt={weather.description} />
           </li>
         </ul>
+        {footer}
       </div>
     );
   } else {
-    return form;
+    return (
+      <div>
+        {form}
+        {footer}
+      </div>
+    );
   }
 }
